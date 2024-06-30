@@ -12,6 +12,7 @@ COPY live /opt/live
 
 WORKDIR /opt/live
 RUN ./genMakefiles linux
+RUN make clean
 RUN make
 RUN make install
 
