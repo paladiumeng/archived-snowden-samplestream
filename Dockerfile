@@ -1,20 +1,23 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 RUN apt-get update && apt-get install -y \
-    wget \
-    ffmpeg \
-    ca-certificates \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    build-essential \
+    cmake \
+    git \
+    libssl-dev
 
-RUN wget https://github.com/bluenviron/mediamtx/releases/download/v1.8.3/mediamtx_v1.8.3_linux_amd64.tar.gz -O /mediamtx.tar.gz \
-    && tar -xzf /mediamtx.tar.gz -C / \
-    && rm /mediamtx.tar.gz
+# Install Live555
+WORKDIR /opt
+COPY live /opt/live
 
-EXPOSE 8554
+WORKDIR /opt/live
+RUN ./genMakefiles linux
+RUN make
+RUN make install
 
-WORKDIR /
-COPY mediamtx.yaml /mediamtx.yaml
-COPY video.mp4 /video.mp4
+# Set up the project
+WORKDIR /app
+COPY . .
+RUN make
 
-ENTRYPOINT ["/mediamtx", "mediamtx.yaml"]
+CMD ["./samplestream"]
