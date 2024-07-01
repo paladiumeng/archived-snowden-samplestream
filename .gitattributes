@@ -2,3 +2,10 @@ video.mp4 filter=lfs diff=lfs merge=lfs -text
 video.264 filter=lfs diff=lfs merge=lfs -text
 video.mkv filter=lfs diff=lfs merge=lfs -text
 video.ts filter=lfs diff=lfs merge=lfs -text
+videos/videos_to_combine.txt filter=lfs diff=lfs merge=lfs -text
+videos/yacht.hevc filter=lfs diff=lfs merge=lfs -text
+videos/4k.hevc filter=lfs diff=lfs merge=lfs -text
+videos/beauty.hevc filter=lfs diff=lfs merge=lfs -text
+videos/dog.hevc filter=lfs diff=lfs merge=lfs -text
+videos/horse.hevc filter=lfs diff=lfs merge=lfs -text
+videos/.video.mp4 filter=lfs diff=lfs merge=lfs -text
