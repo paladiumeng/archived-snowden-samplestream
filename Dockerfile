@@ -6,7 +6,6 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /opt/snowden-samplestream
-
 COPY oddity-rtsp ./oddity-rtsp 
 
 COPY videos/people.264 /opt/snowden-samplestream/videos/people.264
