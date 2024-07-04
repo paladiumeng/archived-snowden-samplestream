@@ -1,19 +1,13 @@
-FROM ubuntu:22.04
+FROM rust:latest
 
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    cmake \
-    git \
-    libssl-dev
+WORKDIR /opt/snowden-samplestream
 
-COPY live /opt/live
+COPY oddity-rtsp .
 
-WORKDIR /opt/live
-RUN ./genMakefiles linux
-RUN make clean
-RUN make
+COPY videos /opt/snowden-samplestream/videos
 
-WORKDIR /run_env
-COPY videos/* .
+WORKDIR /opt/snowden-samplestream/oddity-rtsp/oddity-rtsp-server
+COPY config.yaml .
+RUN cargo build --release
 
-CMD ["/opt/live/mediaServer/live555MediaServer"]
+CMD ["cargo run config.yaml"]
