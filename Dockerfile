@@ -14,6 +14,6 @@ RUN make clean
 RUN make
 
 WORKDIR /run_env
-COPY videos/4k.hevc .
+COPY videos/* .
 
 CMD ["/opt/live/mediaServer/live555MediaServer"]
