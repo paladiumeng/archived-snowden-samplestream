@@ -1,0 +1,23 @@
+[package]
+name = "oddity-rtsp-server"
+version = "0.1.0"
+authors = ["Oddity.ai Developers <hello@oddity.ai>"]
+license = "MIT OR Apache-2.0"
+edition = "2021"
+
+[dependencies]
+config = { version = "0.13", default-features = false, features = ["yaml"] }
+futures = "0.3"
+oddity-rtsp-protocol = { workspace = true, features = ["tokio-codec"] }
+oddity-sdp-protocol = { workspace = true }
+rand = "0.8"
+serde = { version = "1.0", features = ["derive"] }
+tokio = { version = "1", features = ["full"] }
+tokio-stream = { version = "0.1" }
+tokio-util = { version = "0.7.1", default-features = false, features = [
+    "codec",
+] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+video-rs = { workspace = true }
+
