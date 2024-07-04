@@ -27,10 +27,9 @@ DynamicRTSPServer::createNew(UsageEnvironment& env, Port ourPort,
 			     UserAuthenticationDatabase* authDatabase,
 			     unsigned reclamationTestSeconds) {
   int ourSocketIPv4 = setUpOurSocket(env, ourPort, AF_INET);
-  int ourSocketIPv6 = setUpOurSocket(env, ourPort, AF_INET6);
-  if (ourSocketIPv4 < 0 && ourSocketIPv6 < 0) return NULL;
+  if (ourSocketIPv4 < 0 ) return NULL;
 
-  return new DynamicRTSPServer(env, ourSocketIPv4, ourSocketIPv6, ourPort,
+  return new DynamicRTSPServer(env, ourSocketIPv4, NULL, ourPort,
 			       authDatabase, reclamationTestSeconds);
 }
 

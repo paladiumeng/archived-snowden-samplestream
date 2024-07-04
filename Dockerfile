@@ -6,19 +6,14 @@ RUN apt-get update && apt-get install -y \
     git \
     libssl-dev
 
-# Install Live555
-WORKDIR /opt
 COPY live /opt/live
 
 WORKDIR /opt/live
 RUN ./genMakefiles linux
 RUN make clean
 RUN make
-RUN make install
 
-# Set up the project
-WORKDIR /app
-COPY . .
-RUN make
+WORKDIR /run_env
+COPY videos/4k.hevc .
 
-CMD ["./samplestream"]
+CMD ["/opt/live/mediaServer/live555MediaServer"]
