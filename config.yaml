@@ -2,7 +2,7 @@ server:
   host: 0.0.0.0
   port: 8554
 media:
-  - name: "horse"
-    path: "/horse"
+  - name: "people"
+    path: "/people"
     kind: file
-    source: ../../videos/horse.265
+    source: ./videos/people.264
