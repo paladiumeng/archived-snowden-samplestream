@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /opt/snowden-samplestream
 COPY oddity-rtsp ./oddity-rtsp 
 
-COPY videos/people.264 /opt/snowden-samplestream/videos/people.264
+COPY videos/chinese.mp4 /opt/snowden-samplestream/videos/chinese.mp4
 
 WORKDIR /opt/snowden-samplestream/oddity-rtsp
 RUN cargo build --release

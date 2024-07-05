@@ -5,4 +5,4 @@ media:
   - name: "people"
     path: "/people"
     kind: file
-    source: ./videos/people.264
+    source: ./videos/chinese.mp4
