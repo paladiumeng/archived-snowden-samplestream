@@ -15,3 +15,6 @@ videos/people.264 filter=lfs diff=lfs merge=lfs -text
 videos/horse.265 filter=lfs diff=lfs merge=lfs -text
 videos/output.hevc filter=lfs diff=lfs merge=lfs -text
 videos/chinese.mp4 filter=lfs diff=lfs merge=lfs -text
+videos/poi.mkv filter=lfs diff=lfs merge=lfs -text
+videos/chinese2.mp4 filter=lfs diff=lfs merge=lfs -text
+videos/park.mp4 filter=lfs diff=lfs merge=lfs -text
