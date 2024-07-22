@@ -2,7 +2,7 @@ server:
   host: 0.0.0.0
   port: 8554
 media:
-  - name: "chinese"
-    path: "/chinese"
+  - name: "incendies"
+    path: "/incendies"
     kind: file
-    source: ./videos/chinese2.mp4
+    source: ./videos/incendies.mp4
